@@ -47,6 +47,8 @@ def get_routes(Options_dic):
     posibleRoutes = list(filter( filter_IsValid,Options_dic.items()))
     return random.sample(posibleRoutes,len(posibleRoutes))
 
+def center_Align(windoSize,surface):
+    return (windoSize[0] - surface.get_width())/2
 
 if __name__ == "__main__":
     print("\n\nHello from...")
