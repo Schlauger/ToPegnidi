@@ -34,8 +34,13 @@ def main():
     # sprite_sheet= pyg.image.load('assets/ninja/Fighter/Walk.png').convert_alpha()
     # fighter_walk =[get_image(sprite_sheet, i, 0, 128, 128, 1, (0,0,0)) for i in range(8)]
     fighter = Animatronic("Fighter")
+    fighter.add_Action(file_name='assets/ninja/Fighter/Idle.png',action_name="idle",num_of_frames=6,width_in=128,height_in=128)
     fighter.add_Action(file_name='assets/ninja/Fighter/Walk.png',action_name="walk",num_of_frames=8,width_in=128,height_in=128)
-    action=fighter.get_Action("walk")
+    fighter.add_Action(file_name='assets/ninja/Fighter/Run.png',action_name="run",num_of_frames=8,width_in=128,height_in=128)
+    # action=fighter.get_Action("walk")
+    # action=fighter.get_Action("run")
+    action=fighter.get_Action("idle")
+    
     
     # Animation timer
     last_update = pyg.time.get_ticks()
