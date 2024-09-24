@@ -55,11 +55,18 @@ def get_routes(Options_dic):
 def center_Align(windoSize,surface):
     return (windoSize[0] - surface.get_width())/2
 
+ma_fonts=["AnAlphaBetIsm-Medium.ttf", "AnAlphaBetIsm.ttf", "Apalu.ttf", "Asghia-Regular.otf", "Asghia-Regular.ttf", "Canterbury.ttf", "Christmas Gift.ttf", "HomemadeApple.ttf", "Olde English Regular.ttf", "POSEA___.TTF", "Prestige Signature Script - Demo.ttf", "Reman.ttf", "ROCHESTE.TTF", "Rossana-Regular.otf", "southpaw.otf", "SpontanoCondenso.ttf", "StrokeyHand.ttf", "TangoMacabre.ttf", "Tremolo-DemiBold.ttf", "Tremolo.ttf", "Viking Runes and Icons.otf"]
 # Get label surface from text
 def text_label(txt,font_idx=0,font_size=5,color=pyg.Color('#9000ff')):
     pyg.font.init()
-    fonts=pyg.font.get_fonts()
-    di_fond = pyg.font.SysFont('Arial',font_size)
+    fonts = pyg.font.get_fonts()
+    di_fond = pyg.font.SysFont(fonts[font_idx],font_size)
+    text_surface = di_fond.render(txt,True,color)
+    return text_surface
+
+def text_label_tf(txt,font_name,font_size=5,color=pyg.Color('#9000ff')):
+    pyg.font.init()
+    di_fond = pyg.font.Font(font_name,font_size)
     text_surface = di_fond.render(txt,True,color)
     return text_surface
 

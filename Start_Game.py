@@ -17,7 +17,7 @@ def main():
     # Initialize variables        
     windoSize = ((2**7)*5,(2**7)*5) 
     clock = pyg.time.Clock()
-    fps = 120
+    fps = 30
     surfaceColor = (144, 0, 255)
     screen = pyg.display.set_mode(windoSize, DOUBLEBUF, 32)
     pyg.display.set_caption("Rogue and King")
@@ -64,7 +64,14 @@ def main():
         screen.blit(sky,(0,0))
         screen.blit(frst_surface,(0,windoSize[1]-150))
 
-        txt_label = text_label("Rogue to King",font_size=69)
+        # txt_label = text_label("Rogue to King",font_idx=84,font_size=69)
+        # text_label_ttf("Rogue to King",'assets/fonts/Canterbury.ttf')
+        
+        # text_label_ttf("Rogue to King",'assets/fonts/Olde English Regular.ttf')
+        # text_label_ttf("Rogue to King",'assets/fontsPrestige Signature Script - Demo.ttf')
+        # txt_label = text_label_ttf("Rogue to King",'assets/fonts/Rossana-Regular.otf',font_size=69)
+        font_idx=len(ma_fonts)-1
+        txt_label = text_label_tf("Rogue to King",'assets/fonts/'+ma_fonts[font_idx-1],font_size=69)
         txt_x = center_Align(windoSize,txt_label)
         txt_y = windoSize[1]//4
         screen.blit(txt_label,(txt_x,txt_y))
@@ -83,7 +90,7 @@ def main():
         pyg.display.update()
         endprogram = getQuit()
         #Set while clock
-        # clock.tick(fps)
+        clock.tick(fps)
     
     pyg.quit()
     exit()

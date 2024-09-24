@@ -1,0 +1,5 @@
+git rm --cached __pycache__
+
+/__pycache__
+
+assets/background.png
