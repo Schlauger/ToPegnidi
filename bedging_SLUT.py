@@ -71,18 +71,18 @@ def text_label_tf(txt,font_name,font_size=5,color=pyg.Color('#9000ff')):
     return text_surface
 
 
-# # Get a tile piece from a surface 
-# def get_image(sheet, x_i, y_i, width, height,scale=1,color=(0,0,0)):
-#     ''' Get image from sprite sheet
-#      start at indexes **x_i** and **y_i** <u>NOT PIXELS</u>
-#      with **height** and **width**
-#     '''
-#     img = pyg.Surface((width, height)).convert_alpha()
-#     img.blit(sheet,(0,0),((x_i * width),(y_i * height),width,height))
-#     img = pyg.transform.scale(img, (width * scale, height *scale))
-#     img.set_colorkey(color)
-#     return img
-# pygame.font.get_fonts()
+# Get a tile piece from a surface 
+def get_image(sheet, x_i, y_i, width, height,scale=1,color=(0,0,0)):
+    ''' Get image from sprite sheet
+     start at indexes **x_i** and **y_i** <u>NOT PIXELS</u>
+     with **height** and **width**
+    '''
+    img = pyg.Surface((width, height)).convert_alpha()
+    img.blit(sheet,(0,0),((x_i),(y_i),width,height))
+    img = pyg.transform.scale(img, (width * scale, height *scale))
+    img.set_colorkey(color)
+    return img
+
 
 if __name__ == "__main__":
     print("\n\nHello from...")
